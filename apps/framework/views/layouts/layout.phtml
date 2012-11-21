@@ -1,0 +1,42 @@
+<?php
+	$resource = $this->getResource();
+	$resource->setHeader('Vary', 'Accept');
+	
+	if ($resource->isAcceptedMime('application/xhtml+xml')) {
+		$resource->setHeader('Content-Type', 'application/xhtml+xml; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'XHTML_TRANS');
+	} else {
+		$resource->setHeader('Content-Type', 'text/html; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'HTML4_TRANS');
+	}
+	
+	echo $doctype ."\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title><?php echo $this->headTitle; ?></title>
+		<link rel="stylesheet" href="/media//css/layout" />
+	</head>
+	<body>
+		<div id="body">
+			<div id="header">
+				<div id="menu">
+					<?php echo $this->renderPartial('menu', 'default'); ?>
+				</div>
+			</div>
+			<div id="wrapper">
+				<?php
+					echo $this->getPlaceholder('smash_content');
+				?>
+				<br class="clear" />
+			</div>
+			<div id="footer">
+				<ul>
+					<li id="last">
+						Copyright © 2008 Spiroo Digital Creations
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

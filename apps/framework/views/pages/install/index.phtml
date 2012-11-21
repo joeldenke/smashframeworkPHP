@@ -1,0 +1,52 @@
+
+			<div id="installLeft">
+<?php
+					function treeLoop(array $values, $indent = 0, $first = true)
+					{
+						echo str_repeat("\t", $indent) . ($first ? '<ul class="tree">' : '<ul class="subtree">') . Smash\Core::CRLF;
+						
+						foreach ($values as $key => $value) {
+							if (is_array($value)) {
+								echo str_repeat("\t", $indent+1) . "<li class=header>$key</li>". Smash\Core::CRLF;
+								treeLoop($value, $indent+1, false);
+							} else {
+								echo	str_repeat("\t", $indent+1) . "<li>". Smash\Core::CRLF .
+									str_repeat("\t", $indent+2) . "<ul class='element'>". Smash\Core::CRLF .
+									str_repeat("\t", $indent+3) . "<li class='key'>$key</li>" . Smash\Core::CRLF .
+									str_repeat("\t", $indent+3) . "<li class='separator'>=></li>" . Smash\Core::CRLF .
+									str_repeat("\t", $indent+3) . "<li class'value'>$value</li>" . Smash\Core::CRLF .
+									str_repeat("\t", $indent+2) . "</ul>". Smash\Core::CRLF .
+									str_repeat("\t", $indent+1) . "</li>". Smash\Core::CRLF;
+							}
+						}
+						
+						echo str_repeat("\t", $indent) .'</ul>'. Smash\Core::CRLF;
+					}
+					
+					if (is_array($this->config)) {
+						treeLoop($this->config, 4);
+					}
+					echo $this->form->display(4);
+				?>
+			</div>
+			<div id='installRight'>
+<?php
+					if ($this->form->hasErrors('process')) {
+						$errors = $this->form->getErrors('process');
+						
+						foreach ($errors as $error) {
+							echo $error->getMessage();
+						}
+					} else {
+?>
+				<b>Install Instructions:</b><br />
+				<br />
+				<b>1.</b> Change the file permissions of the confdata.php file to 777.<br />
+				<br />
+				<b>2.</b> Enter your database information using the form to the left.<br />
+				<br />
+				<b>3.</b> Delete this file after you have installed the Content Management System. It´s just for security reasons.<br />
+				<br />
+<?php } ?>
+			</div>
+			

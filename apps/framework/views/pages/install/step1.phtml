@@ -1,0 +1,92 @@
+			<div id='installLeft'>
+				<b>Require fields are indicated by an asterisk (*)</b><br /><br />
+				<form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post'>
+					<div class='formLeft'>
+						Database Host *
+					</div>
+					<div class='formRight'>
+						<input type='text' name='dbHost' value='";
+	if(!$_POST['dbHost']) {
+		localhost";
+	} else {
+		echo $_POST['dbHost'];
+	}
+	' />
+					</div>
+					<div class='formLeft'>
+						Database Username *
+					</div>
+					<div class='formRight'>
+						<input type='text' name='dbUser' value='".$_POST['dbUser']."' />
+					</div>
+					<div class='formLeft'>
+						Database Password *
+					</div>
+					<div class='formRight'>
+						<input type='password' name='dbPass' value='".$_POST['dbPass']."' />
+					</div>
+					<div class='formLeft'>
+						Database Name *
+					</div>
+					<div class='formRight'>
+						<input type='text' name='dbName' value='".$_POST['dbName']."' />
+					</div>
+					<div class='formLeft'>
+						User Table
+					</div>
+					<div class='formRight'>
+						<input type='text' name='dbUsers' value='";
+	if(!$_POST['dbUsers']) {
+		cms_users";
+	} else {
+		echo $_POST['dbUsers'];
+	}
+	' />
+					</div>
+					<div class='formLeft'>
+						Username *
+					</div>
+					<div class='formRight'>
+						<input type='text' name='adminUsername' value='".$_POST['adminUsername']."' />
+					</div>
+					<div class='formLeft'>
+						Password *
+					</div>
+					<div class='formRight'>
+						<input type='password' name='adminPassword' value='".$_POST['adminPassword']."' />
+					</div>
+					<div class='formLeft'>
+						Confirm Password *
+					</div>
+					<div class='formRight'>
+						<input type='password' name='confirm' value='".$_POST['confirm']."'/>
+					</div>
+					<div class='formLeft'>
+						CMS Version
+					</div>
+					<div class='formRight'>
+						<input type='text' name='cmsVersion' value='";
+	if(!$_POST['cmsVersion']) {
+		echo 'Spiroo Digital Creations - Content Management System Beta v1.0';
+	} else {
+		echo $_POST['cmsVersion'];
+	}
+	' />
+					</div>
+					<div class='formLeft'>
+					</div>
+					<div class='formRight'>
+						<input class='button' type='submit' value='Install' />
+					</div>
+				</form>
+			</div>
+			<div id='installRight'>
+				<b>Install Instructions:</b><br />
+				<br />
+				<b>1.</b> Change the file permissions of the confdata.php file to 777.<br />
+				<br />
+				<b>2.</b> Enter your database information using the form to the left.<br />
+				<br />
+				<b>3.</b> Delete this file after you have installed the Content Management System. It´s just for security reasons.<br />
+				<br />
+			</div>

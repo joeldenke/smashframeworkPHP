@@ -1,0 +1,46 @@
+<?php
+	$request  = Smash\Library::dependecy('mvc.controller.request');
+	$resource = $this->getResource();
+	$resource->setHeader('Vary', 'Accept');
+
+	if ($resource->isAcceptedMime('application/xhtml+xml')) {
+		$resource->setHeader('Content-Type', 'application/xhtml+xml; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'XHTML_TRANS');
+	} else {
+		$resource->setHeader('Content-Type', 'text/html; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'HTML4_TRANS');
+	}
+
+	echo $doctype ."\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>CSM Blog - Install</title>
+
+		<!-- Cascading Style Sheets -->
+		<link rel="stylesheet" type="text/css" media="all" href="/media/css/install" />
+
+		<!-- Meta Tags -->
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta name="MSSmartTagsPreventParsing" content="true" />
+		<meta name="robots" content="all" />
+
+		<meta name="description" content="Spiroo Digital Creations - Content Management System" />
+		<meta name="keywords" content="xhtml, css, cms, login, php, image manager, page manager, htmleditor, design" />
+	</head>
+	<body>
+	<div id="install">
+		<div id="header">
+		</div>
+		<div id="content">
+<?php echo $this->getPlaceholder('smash_content'); ?>
+		</div>
+		<div id="footer">
+			<ul>
+				<li><a href="http://validator.w3.org/check?uri=<?php echo $request->getUrl(); ?>" title="Extensible HyperText Markup Language Valid">XHTML 1.1</a></li>
+				<li><a href="http://jigsaw.w3.org/css-validator/validator?uri=<?php echo $request->getUrl(); ?>" title="Cascading Style Sheets Valid">CSS</a></li>
+			</ul>
+		</div>
+	</div>
+	</body>
+</html>

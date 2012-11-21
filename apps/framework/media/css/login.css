@@ -1,0 +1,90 @@
+form {
+	margin          : 0;
+	padding         : 0;
+}
+
+form fieldset {
+	margin          : 0;
+	padding         : 0;
+	
+	border          : 0;
+}
+
+form legend {
+	margin          : 5px;
+	color           : #4A4241;
+	font            : 16px verdana, sans-serif; 
+	font-weight     : bold;
+	text-align      : center;
+}
+
+form label {
+	margin          : 2px;
+	padding         : 4px;
+
+	float           : left;
+	width           : 150px;
+	
+	color           : #4A4241;
+	font            : 12px verdana, sans-serif; 
+	font-weight     : bold;
+	
+	text-decoration : none;
+}
+
+form p {
+	margin          : 2px 0 2px 0;
+	padding         : 0;
+}
+
+form p.error {
+	margin          : 10px;
+	color           : #FF0000;
+	font            : 12px arial, sans-serif;
+	font-weight     : bold;
+}
+
+form p.buttons {
+	margin          : 10px 0 0 0;
+	padding         : 0 0 0 10px;
+	height          : 100%;
+	width           : 300px;
+}
+
+form p.buttons input.button {
+	margin          : 5px 0 0 0;
+	
+	width           : 125px;
+	height          : 30px;
+	
+	background      : url(/image/button.png);
+	border          : 0;
+	
+	color           : #4A4241;
+	font            : 14px arial, sans-serif;
+	font-weight     : bold;
+}
+
+form p input, form p textarea {
+	margin          : 4px; 
+	padding         : 3px;
+	
+	width           : 165px;
+	overflow        : hidden;
+	background      : #FFF;
+	border          : 1px solid #000;
+	
+	color           : #FFA020;
+	font            : 11px verdana, sans-serif; 
+	font-weight     : normal;
+	
+	text-decoration : none;
+}
+
+#login {
+	margin          : 0 auto;
+	padding         : 100px 0 0 20px;
+	width           : 445px;
+	height          : 393px;
+	background      : url(/media/image/login.jpg) no-repeat;
+}

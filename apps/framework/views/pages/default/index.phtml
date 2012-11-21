@@ -1,0 +1,27 @@
+<?php
+	$request  = $this->getFront()->request;
+	$response = $this->getFront()->response;
+	
+	$response->setHeader('Vary', 'Accept');
+	
+	if ($request->isAcceptedMime('application/xhtml+xml')) {
+		$response->setHeader('Content-Type', 'application/xhtml+xml; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'XHTML_TRANS');
+	} else {
+		$response->setHeader('Content-Type', 'text/html; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'HTML4_TRANS');
+	}
+	
+	echo $doctype ."\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title><?php echo $this->title; ?></title>
+		<link rel="stylesheet" href="/css/login" />
+	</head>
+	<body>
+		<div id="login">
+			woho inloggad
+		</div>
+	</body>
+</html>

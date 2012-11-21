@@ -1,0 +1,53 @@
+<?php
+	$resource = $this->getController()->getResource();
+	$resource->setHeader('Vary', 'Accept');
+	
+	if ($resource->isAcceptedMime('application/xhtml+xml')) {
+		$resource->setHeader('Content-Type', 'application/xhtml+xml; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'XHTML_TRANS');
+	} else {
+		$resource->setHeader('Content-Type', 'text/html; charset=iso-8859-1', true);
+		$doctype = $this->doctype('doctype', 'HTML4_TRANS');
+	}
+	
+	echo $doctype ."\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title><?php echo $this->title; ?></title>
+		<link rel="stylesheet" href="/media/css/login" />
+	</head>
+	<body>
+		<div id="login">
+			<form action="<?php echo $this->host .'/blog/auth/login/'; ?>" method="post">
+<?php
+	$error = $this->error;
+			
+	if (!empty($error)) {
+		echo '				<p class="error">'. Smash\Core::CRLF;
+		echo '					'. $error . Smash\Core::CRLF;
+		echo '				</p>';
+	}
+?>
+				<fieldset>
+					<legend>Logga in</legend>
+					<p class="hidden">
+						<input type="hidden" name="referer" value="<?php echo $this->referer; ?>" />
+					</p>
+					<p>
+						<label for="identify">Användarnamn</label>
+						<input type="text" name="identity" id="identity" />
+					</p>
+					<p>
+						<label for="credential">Lösenord</label>
+						<input type="password" name="credential" id="credential" />
+					</p>
+					<p class="buttons">
+						<label for="button">&#160;</label>
+						<input type="submit" class="button" id="button" value="Logga in" />
+					</p>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

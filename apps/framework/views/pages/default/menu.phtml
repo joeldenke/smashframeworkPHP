@@ -1,0 +1,15 @@
+<?php
+	use \Smash\Core;
+	
+	// echo '<li><a href="'. $host .$module.'/auth/logout' .'">Logga ut</a></li>';
+	
+	$breadcrumbs = $this->menu('breadcrumbs');
+	$this->menu('printTree', false, 5);
+	
+	foreach ($breadcrumbs as $bread => $crumb) {
+		if ($bread === 0) {
+			$bread = 'Startsida';
+		}
+		echo '>> <a href="'. $crumb .'">'. $bread .'</a> ';
+	}
+?>

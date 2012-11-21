@@ -1,0 +1,215 @@
+/* CSS Document */
+
+html, body{
+	background-color: #74809C;
+	margin : 15px;
+	padding : 0;
+	height : 100%;
+
+	font : 9px verdana, arial, sans-serif;
+	color : #404040;
+	text-align : center;
+	overflow : hidden;
+}
+
+
+form {
+	margin : 0;
+}
+
+form dl.buttons {
+	clear : both;
+	padding : 10px;
+}
+
+form dl.element dt {
+	margin : 0;
+	padding         : 2px;
+
+	float           : left;
+	width           : 140px;
+}
+
+form dl.element dd {
+	margin : 0;
+	padding         : 2px 0;
+
+	float           : left;
+	width           : 140px;
+}
+
+form dl.buttons dt {
+	margin : 0;
+	padding         : 2px;
+	float           : left;
+}
+
+form dl.buttons dd {
+	margin : 0;
+	padding         : 2px 0;
+
+	float           : left;
+	width           : 140px;
+}
+
+form fieldset {
+	margin          : 0;
+	padding         : 0;
+
+	border          : 0;
+}
+
+form legend {
+	padding          : 0 10px 10px 10px;
+	color           : #4A4241;
+	font            : 10px verdana, sans-serif;
+	font-weight     : bold;
+	text-align      : center;
+}
+
+form label {
+	padding         : 10px 0 10px 10px;
+
+	color : #33CC00;
+	font            : 10px verdana, sans-serif;
+	font-weight     : bold;
+	width : 100%;
+
+	text-decoration : none;
+}
+
+input {
+	padding : 2px;
+	background : #FFFFFF;
+	font : 10px Tahoma, Verdana, Helvetica, Arial, 	Sans-serif;
+	color : #0099FF;
+	text-decoration : none;
+	font-weight : normal;
+	width : 150px;
+	border : 1px solid #666666;
+}
+
+input.button {
+	font : 10px verdana, arial, sans-serif;
+	font-weight : bold;
+	color : #0099FF;
+	width : 125px;
+	height : 30px;
+	background-image : url(/media/image/formbutton.jpg);
+	border : 0;
+}
+
+div#install {
+	margin : 0 auto;
+	padding : 15px;
+	width : 620px;
+
+	text-align : left;
+
+	background : #fff;
+}
+
+div#header {
+	margin : 0;
+	padding : 0;
+	width : 620px;
+	height : 150px;
+
+	background : #0099FF url(/media/image/installheader.jpg);
+}
+
+div#content {
+	margin : 0;
+	padding : 10px 0 10px 0;
+	width : 620px;
+
+	background : #fff;
+}
+
+div#content a {
+	color : #33CC00;
+	text-decoration : none;
+	font-weight : bold;
+}
+
+div#content a:hover {
+	text-decoration : underline;
+}
+
+div#installLeft {
+	margin : 0 0 15px 0;
+	padding : 0;
+	width : 340px;
+	float : left;
+
+	background : #fff;
+}
+
+div#installRight {
+	margin : 0 0 15px 0;
+	padding : 10px;
+	width : 258px;
+	float : left;
+
+	border : 1px solid #404040;
+}
+
+div#footer {
+	clear: both;
+	margin : 0;
+	padding : 0;
+	width : 620px;
+	height : 30px;
+
+	background : #0099FF url(/media/image/installfooter.jpg);
+}
+
+div#footer ul {
+	margin : 0 0 0 5px;
+	padding : 0;
+
+	list-style-type : none;
+}
+
+div#footer li {
+	margin : 7px 0px 0px 7px;
+	float : left;
+}
+
+div#footer ul li  a,
+div#footer ul li  a:link,
+div#footer ul li  a:visited
+div#footer ul li  a:active {
+	text-decoration : none;
+	color : #FFFFFF;
+	font : 12px Arial, sans-serif;
+	font-weight : bold;
+}
+
+div#footer ul li a:hover {
+	padding : 1px;
+	background-color : #FFFFFF;
+
+  	text-decoration : none;
+  	color : #0099FF;
+}
+
+ol.errors {
+	margin : 5px 0 5px 0;
+	padding : 0;
+	width : 152px;
+
+	border : 1px solid #f00;
+	font-weight : bold;
+	color : #f00;
+}
+
+ol.errors li {
+	margin: 10px 10px 10px 30px;
+}
+
+.errors {
+	font-size : 12px;
+	font-weight : bold;
+	color : #f00;
+}
